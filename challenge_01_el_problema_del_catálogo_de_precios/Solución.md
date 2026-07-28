@@ -106,17 +106,3 @@ La ejecución del motor nuevo puede ser síncrona (si es rápido, que debería s
 Después de unas semanas, cuando el porcentaje de discrepancias baje a cero o casi cero, inviertes: el motor nuevo es la fuente de verdad y el legacy pasa a shadow. Otra semana sin problemas, eliminas el legacy.
 
 Esto es lo que te protege de ese if en la línea 1.247 que nadie conoce. No tienes que entender el legacy; solo tienes que demostrar que tu sistema nuevo produce los mismos resultados con tráfico real.
-
----
-
-**Evaluación final del reto:**
-
-| Dimensión | Nota |
-|---|---|
-| Rendimiento | 8/10 |
-| Modelo de dominio | 5/10 — Identificaste los patrones correctos pero te faltó la separación código/datos |
-| Migración | 3/10 — Los tests unitarios son necesarios pero no cubrían el riesgo real |
-| Auditoría | 7/10 — Buena propuesta base con correlation ID y eventos |
-| **Global** | **5.5/10** |
-
-No es una mala nota para calibración. Tienes buen instinto para elegir patrones y tu enfoque de monolito modular es pragmático. Los dos gaps principales son: pensar en el problema desde el negocio (marketing no puede depender de devs) y pensar en la operación (cómo verificas en producción, no solo en tests). Son exactamente los saltos que separan a un dev senior de un arquitecto.
